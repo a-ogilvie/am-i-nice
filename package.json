@@ -1,8 +1,7 @@
 {
   "name": "am-i-nice",
   "version": "0.1.0",
-  "description":
-    "A sentiment analyser which connects to social networks and rates the language you've used.",
+  "description": "A sentiment analyser which connects to social networks and rates the language you've used.",
   "main": "index.js",
   "repository": "https://github.com/a-ogilvie/am-i-nice.git",
   "author": "Alexander Ogilvie",
@@ -21,6 +20,7 @@
     "morgan": "~1.9.0"
   },
   "devDependencies": {
+    "dotenv": "^5.0.1",
     "nodemon": "^1.17.4"
   }
 }
