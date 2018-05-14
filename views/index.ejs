@@ -14,7 +14,7 @@
       console.log('statusChangeCallback');
       console.log(response);
       if (response.status === 'connected') {
-        testAPI();
+        fetchPosts(response.authResponse);
       } else {
         document.getElementById('status').innerHTML = "Please log into this app.";
       }
@@ -48,20 +48,47 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, "script", "facebook-jssdk"));
 
-    function testAPI() {
-      console.log("Welcome! Fetching your information...");
-      FB.api("/me", function (response) {
-        console.log("Successful login for: " + response.name);
-        document.getElementById('status').innerHTML = "Thanks for logging in, " + response.name + "!";
-      });
+    let userPosts = [];
+
+    function fetchPosts(userInfo) {
+      FB.api(`/${userInfo.userID}/posts`, "get", { access_token: userInfo.accessToken }, pageResults);
+    }
+
+    function pageResults(result) {
+      result.data.forEach(datum => {
+        if (datum.message) {
+          userPosts.push(datum.message);
+        }
+      })
+
+      if (result.paging && result.paging.next) {
+        FB.api(result.paging.next, "get", null, pageResults);
+      } else {
+        analyseSentiments();
+      }
+    }
+
+    function analyseSentiments() {
+      console.log(userPosts);
     }
   </script>
+
   <h1>
     <%= title %>
   </h1>
   <p>Welcome to
     <%= title %>
   </p>
+
+  <fb:login-button scope="user_posts" onlogin="checkLoginState();">
+  </fb:login-button>
+
+  <div id="status">
+  </div>
+
+  <div id="result">
+
+  </div>
 </body>
 
 </html>
