@@ -12,6 +12,27 @@ function analyseSentiments(sentiments) {
   });
 
   Promise.all(sentimentReqs).then((results) => {
-    console.log(results);
+    processResults(results);
   });
+}
+
+// Process results for D3.js
+function processResults(results) {
+  const sentimentality = { positive: 0, negative: 0, neutral: 0 };
+
+  results.forEach((result) => {
+    if (result.analysis.score < -0.2) {
+      sentimentality.negative++;
+    } else if (result.analysis.score < 0.2) {
+      sentimentality.neutral++;
+    } else {
+      sentimentality.positive++;
+    }
+  });
+
+  drawGraph([
+    { label: "positive", count: sentimentality.positive },
+    { label: "neutral", count: sentimentality.neutral },
+    { label: "negative", count: sentimentality.negative }
+  ]);
 }
