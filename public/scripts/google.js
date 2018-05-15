@@ -20,7 +20,17 @@ function analyseSentiments(sentiments) {
 function processResults(results) {
   const sentimentality = { positive: 0, negative: 0, neutral: 0 };
 
+  let topPost = { analysis: { score: -1 } };
+  let bottomPost = { analysis: { score: 1 } };
+
   results.forEach((result) => {
+    if (result.analysis.score > topPost.analysis.score) {
+      topPost = result;
+    }
+    if (result.analysis.score < bottomPost.analysis.score) {
+      bottomPost = result;
+    }
+
     if (result.analysis.score < -0.2) {
       sentimentality.negative++;
     } else if (result.analysis.score < 0.2) {
@@ -47,4 +57,6 @@ function processResults(results) {
       count: sentimentality.negative
     }
   ]);
+
+  appendPosts(topPost, bottomPost);
 }
