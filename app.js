@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === "development") {
   require("dotenv").config();
 }
 
-import indexRouter from "./routes/index";
+const indexRouter = require("./routes/index");
 
 const app = express();
 
