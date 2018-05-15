@@ -55,16 +55,20 @@ function fetchPosts(userInfo) {
 function pageResults(result) {
   result.data.forEach((datum) => {
     if (datum.message) {
-      userPosts.push(datum.message);
+      userPosts.push({
+        message: datum.message,
+        createdTime: datum.created_time
+      });
     }
   });
 
-  if (userPosts.length < 100 && result.paging && result.paging.next) {
+  if (userPosts.length < 20 && result.paging && result.paging.next) {
     FB.api(result.paging.next, "get", null, pageResults);
   } else {
     hideElement("loading-fb");
     showElement("done-fb");
     showElement("loading-google");
+
     analyseSentiments(userPosts);
   }
 }

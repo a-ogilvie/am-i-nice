@@ -5,9 +5,12 @@ function analyseSentiments(sentiments) {
       xhr.open("POST", "/sentiment");
       xhr.setRequestHeader("Content-type", "application/json");
       xhr.onload = () => {
-        resolve({ post: post, analysis: JSON.parse(xhr.response) });
+        resolve({
+          post: post,
+          analysis: JSON.parse(xhr.response)
+        });
       };
-      xhr.send(JSON.stringify({ post }));
+      xhr.send(JSON.stringify({ post: post.message }));
     });
   });
 
@@ -57,6 +60,8 @@ function processResults(results) {
       count: sentimentality.negative
     }
   ]);
+
+  showElement("result");
 
   appendPosts(topPost, bottomPost);
 }
