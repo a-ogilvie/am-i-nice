@@ -14,3 +14,9 @@ a {
 rect {
   stroke-width: 2;
 }
+
+#result {
+  height: 360px;
+  position: relative;
+  width: 360px;
+}
