@@ -11,17 +11,31 @@ a {
   font-size: 12px;
 }
 
-rect {
-  stroke-width: 2;
+#result-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 #graph {
   height: 360px;
   position: relative;
   width: 360px;
+  margin: 20px;
+}
+
+rect {
+  stroke-width: 2;
 }
 
 h5 {
   font-size: 14px;
   text-align: center;
+}
+
+#post-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
