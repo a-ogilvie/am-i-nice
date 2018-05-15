@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <script src="./scripts/helpers.js"></script>
   <script src="./scripts/fb.js"></script>
   <script src="./scripts/google.js"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -20,12 +21,20 @@
   <p>Welcome to Am I Nice?
   </p>
 
-  <fb:login-button scope="user_posts" onlogin="checkLoginState();">
-  </fb:login-button>
-
-  <div id="status">
+  <div id="fb-login">
+    <fb:login-button scope="user_posts" onlogin="checkLoginState();">
+    </fb:login-button>
+    <div id="status">
+    </div>
   </div>
 
+  <div id="loading-fb" hidden>Loading Facebook posts...</div>
+  <div id="done-fb" hidden>Done loading Facebook posts!</div>
+  <div id="loading-google" hidden>Analysing posts...</div>
+  <div id="done-google" hidden>Analysis complete!</div>
+
+
+  <h5>Analysis Results</h5>
   <div id="result">
   </div>
 </body>
