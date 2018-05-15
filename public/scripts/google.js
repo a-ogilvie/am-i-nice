@@ -30,6 +30,9 @@ function processResults(results) {
     }
   });
 
+  hideElement("loading-google");
+  showElement("done-google");
+
   drawGraph([
     {
       label: "Positive",

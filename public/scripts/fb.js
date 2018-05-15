@@ -2,6 +2,8 @@ function statusChangeCallback(response) {
   console.log("statusChangeCallback");
   console.log(response);
   if (response.status === "connected") {
+    hideElement("fb-login");
+    showElement("loading-fb");
     fetchPosts(response.authResponse);
   } else {
     document.getElementById("status").innerHTML = "Please log into this app.";
@@ -60,6 +62,9 @@ function pageResults(result) {
   if (userPosts.length < 100 && result.paging && result.paging.next) {
     FB.api(result.paging.next, "get", null, pageResults);
   } else {
+    hideElement("loading-fb");
+    showElement("done-fb");
+    showElement("loading-google");
     analyseSentiments(userPosts);
   }
 }
