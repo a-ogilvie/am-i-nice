@@ -6,26 +6,22 @@
     Am I Nice?
   </title>
   <link rel='stylesheet' href='/styles/style.css' />
-</head>
-
-<body>
   <script src="./scripts/helpers.js"></script>
   <script src="./scripts/fb.js"></script>
   <script src="./scripts/google.js"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="./scripts/d3processing.js"></script>
+</head>
 
+<body>
   <h1>
     Am I Nice?
   </h1>
-  <p>Welcome to Am I Nice?
-  </p>
+  <p>Welcome to Am I Nice?</p>
 
   <div id="fb-login">
-    <fb:login-button scope="user_posts" onlogin="checkLoginState();">
-    </fb:login-button>
-    <div id="status">
-    </div>
+    <fb:login-button scope="user_posts" onlogin="checkLoginState();"></fb:login-button>
+    <div id="status"></div>
   </div>
 
   <div id="loading-fb" hidden>Loading Facebook posts...</div>
@@ -33,10 +29,13 @@
   <div id="loading-google" hidden>Analysing posts...</div>
   <div id="done-google" hidden>Analysis complete!</div>
 
-
-  <h5>Analysis Results</h5>
   <div id="result">
+    <h5>Analysis Results</h5>
+    <div id="graph"></div>
   </div>
+  <div id="top-post" class="post"></div>
+  <div id="bottom-post" class="post"></div>
+
 </body>
 
 </html>
