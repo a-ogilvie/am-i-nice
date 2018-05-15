@@ -30,25 +30,18 @@ function processResults(results) {
     }
   });
 
-  const positiveColour = "#008000";
-  const neutralColour = "#C0C0C0";
-  const negativeColour = "#FF0000";
-
   drawGraph([
     {
-      label: "positive",
-      count: sentimentality.positive,
-      colour: positiveColour
+      label: "Positive",
+      count: sentimentality.positive
     },
     {
-      label: "neutral",
-      count: sentimentality.neutral,
-      colour: neutralColour
+      label: "Neutral",
+      count: sentimentality.neutral
     },
     {
-      label: "negative",
-      count: sentimentality.negative,
-      colour: negativeColour
+      label: "Negative",
+      count: sentimentality.negative
     }
   ]);
 }
