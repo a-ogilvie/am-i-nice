@@ -62,7 +62,7 @@ function pageResults(result) {
     }
   });
 
-  if (userPosts.length < 20 && result.paging && result.paging.next) {
+  if (userPosts.length < 200 && result.paging && result.paging.next) {
     FB.api(result.paging.next, "get", null, pageResults);
   } else {
     hideElement("loading-fb");
