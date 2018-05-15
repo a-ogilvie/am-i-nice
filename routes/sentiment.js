@@ -2,7 +2,13 @@ var express = require("express");
 var router = express.Router();
 
 const language = require("@google-cloud/language");
-const client = new language.LanguageServiceClient();
+const client = new language.LanguageServiceClient({
+  projectId: "am-i-nice",
+  credentials: {
+    private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+    client_email: process.env.GOOGLE_CLIENT_EMAIL
+  }
+});
 
 router.post("/", (req, res) => {
   const post = {
