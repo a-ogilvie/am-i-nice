@@ -20,3 +20,8 @@ rect {
   position: relative;
   width: 360px;
 }
+
+h5 {
+  font-size: 14px;
+  text-align: center;
+}
