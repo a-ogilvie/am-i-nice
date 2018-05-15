@@ -15,7 +15,7 @@ function drawGraph(sentimentality) {
     .range([positiveColour, neutralColour, negativeColour]);
 
   const svg = d3
-    .select("#result")
+    .select("#graph")
     .append("svg")
     .attr("width", width)
     .attr("height", height)
