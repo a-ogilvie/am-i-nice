@@ -63,5 +63,8 @@ typings/
 # SSL Keys
 *.pem
 
+# Server build
+build
+
 Google Cloud API Key
 GOOGLE_CREDENTIALS.json

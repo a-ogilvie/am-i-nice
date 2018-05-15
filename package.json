@@ -9,8 +9,10 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "start": "node ./server/server.js",
-    "dev": "NODE_ENV=development nodemon --exec babel-node ./server/server.js"
+    "start": "node ./build/server.js",
+    "dev": "NODE_ENV=development nodemon --exec babel-node ./server/server.js",
+    "clean": "rm -rf build && mkdir build",
+    "postinstall": "babel -d ./build ./server -s"
   },
   "dependencies": {
     "@google-cloud/language": "^1.2.0",

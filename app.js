@@ -1,8 +1,8 @@
-import createError from "http-errors";
-import express from "express";
-import path from "path";
-import cookieParser from "cookie-parser";
-import logger from "morgan";
+const createError = require("http-errors");
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
 if (process.env.NODE_ENV === "development") {
   require("dotenv").config();
 }
