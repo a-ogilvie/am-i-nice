@@ -2,8 +2,7 @@ function drawGraph(sentimentality) {
   const width = 360;
   const height = 360;
   const radius = Math.min(width, height) / 2;
-
-  const colour = d3.scaleOrdinal(d3.schemeCategory10);
+  const donutWidth = 75;
 
   const svg = d3
     .select("#result")
@@ -15,7 +14,7 @@ function drawGraph(sentimentality) {
 
   const arc = d3
     .arc()
-    .innerRadius(0)
+    .innerRadius(radius - donutWidth)
     .outerRadius(radius);
 
   const pie = d3
@@ -29,5 +28,8 @@ function drawGraph(sentimentality) {
     .enter()
     .append("path")
     .attr("d", arc)
-    .attr("fill", (d, i) => colour(d.data.label));
+    .attr("fill", (d) => {
+      console.log(d);
+      return d.data.colour;
+    });
 }
