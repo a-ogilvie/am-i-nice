@@ -6,7 +6,7 @@ const client = new language.LanguageServiceClient();
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
-  res.render("index", { title: "Am I Nice?" });
+  res.render("index");
 });
 
 router.post("/sentiment", (req, res) => {
