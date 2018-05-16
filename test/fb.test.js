@@ -1,5 +1,3 @@
-const expect = chai.expect;
-
 describe("fb.js", () => {
   describe("statusChangeCallback", () => {
     let hideElementStub;
