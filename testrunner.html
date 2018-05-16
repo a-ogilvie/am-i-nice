@@ -10,10 +10,14 @@
   <div id="mocha"></div>
   <script src="node_modules/mocha/mocha.js"></script>
   <script src="node_modules/chai/chai.js"></script>
+  <script src="node_modules/sinon-browser-only/sinon.js"></script>
   <script>mocha.setup('bdd')</script>
 
   <!-- load code you want to test here -->
   <script src="public/scripts/fb.js"></script>
+  <script src="public/scripts/google.js"></script>
+  <script src="public/scripts/d3processing.js"></script>
+  <script src="public/scripts/helpers.js"></script>
 
   <!-- load your test files here -->
   <script src="test/fb.test.js"></script>
