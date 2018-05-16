@@ -1,7 +1,8 @@
 {
   "name": "am-i-nice",
   "version": "0.1.0",
-  "description": "A sentiment analyser which connects to social networks and rates the language you've used.",
+  "description":
+    "A sentiment analyser which connects to social networks and rates the language you've used.",
   "main": "index.js",
   "repository": "https://github.com/a-ogilvie/am-i-nice.git",
   "author": "Alexander Ogilvie",
@@ -11,8 +12,8 @@
     "start": "node ./build/server.js",
     "dev": "NODE_ENV=development nodemon --exec babel-node ./server/server.js",
     "clean": "rm -rf build && mkdir build",
-    "test": "mocha",
-    "postinstall": "babel -d ./build ./server -s"
+    "postinstall": "babel -d ./build ./server -s",
+    "build": "yarn postinstall"
   },
   "dependencies": {
     "@google-cloud/language": "^1.2.0",
@@ -35,8 +36,6 @@
     "sinon-browser-only": "^1.12.1"
   },
   "babel": {
-    "presets": [
-      "es2015"
-    ]
+    "presets": ["es2015"]
   }
 }
