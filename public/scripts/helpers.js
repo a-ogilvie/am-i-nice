@@ -1,3 +1,5 @@
+const FB_APP_ID = "192011154757596";
+
 function hideElement(elementId) {
   document.getElementById(elementId).setAttribute("hidden", true);
 }
