@@ -14,10 +14,15 @@
 </head>
 
 <body>
-  <h1>
-    Am I Nice?
-  </h1>
-  <p>Welcome to Am I Nice?</p>
+  <img src="./images/logo.png" id="logo" alt="Am I Nice?">
+  <p>
+    Welcome! Click on the button to send the newest posts (up to 200) to be analysed for their sentiment, and discover if your
+    posts are more positive or negative. The most positive and negative posts will also be displayed.
+  </p>
+  <p>
+    This data is not captured or stored anywhere. Only the text content of the posts is sent to Google for analysis. Personally
+    identifiable information does not leave your own computer.
+  </p>
 
   <div id="fb-login">
     <fb:login-button scope="user_posts" onlogin="checkLoginState();"></fb:login-button>
