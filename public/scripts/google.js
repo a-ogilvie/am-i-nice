@@ -10,6 +10,12 @@ function analyseSentiments(sentiments) {
           analysis: JSON.parse(xhr.response)
         });
       };
+      xhr.onerror = () => {
+        reject({
+          post: "",
+          analysis: JSON.parse(xhr.response)
+        });
+      };
       xhr.send(JSON.stringify({ post: post.message }));
     });
   });

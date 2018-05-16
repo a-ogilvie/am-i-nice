@@ -16,10 +16,13 @@ router.post("/", (req, res) => {
     type: "PLAIN_TEXT"
   };
 
-  client.analyzeSentiment({ document: post }).then((results) => {
-    const sentiment = results[0].documentSentiment;
-    return res.send(sentiment);
-  });
+  client
+    .analyzeSentiment({ document: post })
+    .then((results) => {
+      const sentiment = results[0].documentSentiment;
+      return res.send(JSON.stringify({ score: 0 }));
+    })
+    .catch(() => res.json({ score: 0 }));
 });
 
 module.exports = router;
