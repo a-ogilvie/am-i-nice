@@ -15,6 +15,7 @@ module.exports = {
     semi: ["error", "always"]
   },
   globals: {
-    sinon: true
+    sinon: true,
+    expect: true
   }
 };
