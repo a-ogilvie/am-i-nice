@@ -20,7 +20,7 @@ router.post("/", (req, res) => {
     .analyzeSentiment({ document: post })
     .then((results) => {
       const sentiment = results[0].documentSentiment;
-      return res.send(JSON.stringify({ score: 0 }));
+      return res.json({ score: sentiment.score });
     })
     .catch(() => res.json({ score: 0 }));
 });
