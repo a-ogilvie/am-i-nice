@@ -50,6 +50,7 @@ function processResults(results) {
   });
 
   hideElement("loading-google");
+  hideElement("spinner");
   showElement("done-google");
 
   drawGraph([
