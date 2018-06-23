@@ -68,3 +68,6 @@ build
 
 Google Cloud API Key
 GOOGLE_CREDENTIALS.json
+
+macOS files
+.DS_Store
