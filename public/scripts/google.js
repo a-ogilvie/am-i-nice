@@ -53,8 +53,6 @@ function processResults(results) {
   hideElement("spinner");
   showElement("done-google");
 
-  console.log({ topPost, bottomPost });
-
   drawGraph([
     {
       label: "Positive",
