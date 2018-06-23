@@ -50,7 +50,10 @@ function processResults(results) {
   });
 
   hideElement("loading-google");
+  hideElement("spinner");
   showElement("done-google");
+
+  console.log({ topPost, bottomPost });
 
   drawGraph([
     {

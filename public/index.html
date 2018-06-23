@@ -6,6 +6,7 @@
     Am I Nice?
   </title>
   <link rel='stylesheet' href='/styles/style.css' />
+  <link rel='stylesheet' href='/styles/spinner.css' />
   <script src="./scripts/helpers.js"></script>
   <script src="./scripts/fb.js"></script>
   <script src="./scripts/google.js"></script>
@@ -33,6 +34,13 @@
   <div id="done-fb" hidden>Done loading Facebook posts!</div>
   <div id="loading-google" hidden>Analysing posts...</div>
   <div id="done-google" hidden>Analysis complete!</div>
+  <div id="spinner" hidden>
+    <div class="looping-rhombuses-spinner">
+      <div class="rhombus"></div>
+      <div class="rhombus"></div>
+      <div class="rhombus"></div>
+    </div>
+  </div>
 
   <div id="result" hidden>
     <h5>Analysis Results</h5>

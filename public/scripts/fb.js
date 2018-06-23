@@ -1,9 +1,8 @@
 function statusChangeCallback(response) {
-  console.log("statusChangeCallback");
-  console.log(response);
   if (response.status === "connected") {
     hideElement("fb-login");
     showElement("loading-fb");
+    showElement("spinner");
     fetchPosts(response.authResponse);
   } else {
     document.getElementById("status").innerHTML = "Please log into this app.";
