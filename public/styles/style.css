@@ -4,7 +4,7 @@ body {
 }
 
 header {
-  margin: 10px;
+  margin-bottom: 20px;
   padding: 10px;
   border: solid red 2px;
   background-color: rgba(255, 0, 0, 0.1);
@@ -21,6 +21,12 @@ a {
 
 p {
   text-align: justify;
+}
+
+#fb-login {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .legend {
@@ -46,7 +52,7 @@ rect {
 }
 
 h5 {
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -54,4 +60,21 @@ h5 {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.post {
+  width: 500px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+#top-post {
+  border: solid #008000 2px;
+  background-color: #00800010;
+}
+
+#bottom-post {
+  border: solid #ff0000 2px;
+  background-color: #ff000010;
 }

@@ -71,4 +71,8 @@ function processResults(results) {
   showElement("result");
 
   appendPosts(topPost, bottomPost);
+
+  document
+    .getElementById("result")
+    .scrollIntoView({ behavior: "smooth", block: "start" });
 }
