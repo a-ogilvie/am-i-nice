@@ -15,13 +15,17 @@ function appendPosts(top, bottom) {
   topDiv.innerHTML = `
     <h5>Positive Post</h5>
     <p>${top.post.message}</p>
-    <p>Posted ${new Date(top.post.createdTime)}</p>
+    <p>Posted ${moment(top.post.createdTime).format(
+      "[at] HH:mm [on] dddd, MMMM Do YYYY."
+    )}</p>
     
   `;
 
   bottomDiv.innerHTML = `
     <h5>Negative Post</h5>
     <p>${bottom.post.message}</p>
-    <p>Posted ${new Date(bottom.post.createdTime)}</p>
+    <p>Posted ${moment(bottom.post.createdTime).format(
+      "[at] HH:mm [on] dddd, MMMM Do YYYY."
+    )}</p>
   `;
 }
