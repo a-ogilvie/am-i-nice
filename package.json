@@ -1,8 +1,7 @@
 {
   "name": "am-i-nice",
   "version": "0.1.0",
-  "description":
-    "A sentiment analyser which connects to social networks and rates the language you've used.",
+  "description": "A sentiment analyser which connects to social networks and rates the language you've used.",
   "main": "index.js",
   "repository": "https://github.com/a-ogilvie/am-i-nice.git",
   "author": "Alexander Ogilvie",
@@ -31,11 +30,13 @@
     "chai": "^4.1.2",
     "dotenv": "^5.0.1",
     "eslint": "^4.19.1",
-    "mocha": "^5.1.1",
+    "mocha": "^7.1.2",
     "nodemon": "^1.17.4",
     "sinon-browser-only": "^1.12.1"
   },
   "babel": {
-    "presets": ["es2015"]
+    "presets": [
+      "es2015"
+    ]
   }
 }
